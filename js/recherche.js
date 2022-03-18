@@ -1,74 +1,57 @@
 const url = "http://www.omdbapi.com/?s=";
 const APIKEY = "&apikey=afa3ef9";
-let page = 1
+let page = 1;
 let movieslist = document.querySelector('#movieslist');
-let recherche = document.querySelector('input')
+let recherche = document.querySelector('input');
 let searchbtn = document.querySelector("button[id='Searchbutton']")
-
-function gettopmovies(numberofmovies) {
-    fetch(url + recherche.value + APIKEY)
-        .then(res => res.json())
-        .then(data => {
-
-
-            data.Search.forEach(movie => {
-                console.log(movie);
-                let t = new Movie(
-                    movie.Title,
-                    movie.Poster,
-                    movie.Type,
-                    movie.Year,
-                    movie.imdbID
-                )
-                movieslist.appendChild(t.html())
-                console.log(movieslist);
-            });
-        })
-        .catch(err => console.log({ message: err }))
-}
-
-
 
 class Movie {
     constructor(Title, Poster, Type, Year, imdbID) {
-        this.Title = Title
-        this.img = Poster
-        this.Type = Type
-        this.Year = Year
-        this.imdbID = imdbID
+        this.Title = Title;
+        this.img = Poster;
+        this.Type = Type;
+        this.Year = Year;
+        this.imdbID = imdbID;
     }
     html() {
-        let block = document.createElement('div')
+        let block = document.createElement('div');
 
-        let h2 = document.createElement('h2')
-        let img = document.createElement('img')
-        let imgcontainer = document.createElement('div')
-        let Type = document.createElement('p')
-        let Year = document.createElement('p')
-        let imdbID = document.createElement('a')
+        let h2 = document.createElement('h2');
+        let img = document.createElement('img');
+        let moviecontent = document.createElement('div');
+        let movietext = document.createElement('div');
+        let Type = document.createElement('p');
+        let Year = document.createElement('p');
+        let imdbID = document.createElement('a');
 
-        h2.innerText = this.Title
-        img.src = this.img
-        Type.innerText = this.Type
-        Year.innerText = this.Year
-        imdbID.href     = "pagefilm.html"
+        h2.innerText = this.Title;
+        img.src = this.img;
+        Type.innerText = this.Type;
+        Year.innerText = this.Year;
+        imdbID.href     = "pagefilm.html";
 
-        imdbID.setAttribute('onclick',`gopage("${this.imdbID}")`)
+        imdbID.setAttribute('onclick',`gopage("${this.imdbID}")`);
 
 
-        imgcontainer.appendChild(img)
-        imgcontainer.appendChild(h2)
-        imgcontainer.appendChild(Type)
-        imgcontainer.appendChild(Year)
-        imdbID.appendChild(imgcontainer)
+        moviecontent.appendChild(img);
+        moviecontent.appendChild(h2);
+        moviecontent.appendChild(Type);
+        moviecontent.appendChild(Year);
+        imdbID.appendChild(moviecontent);
 
-        block.appendChild(imdbID)
+        block.appendChild(imdbID);
+
+        moviecontent.style.backgroundImage = "url(" + img.src + ")"
+        moviecontent.style.backgroundRepeat = "no-repeat";
+        moviecontent.style.backgroundSize = "100% 100%";
+
+        movietext.classList.add("moviestextcontainer");
 
         //add class for block
 
-        block.classList.add("moviesection")
-        img.classList.add("moviesposter")
-        imgcontainer.classList.add("moviesimagecontainer")
+        block.classList.add("moviesection");
+        img.classList.add("moviesposter");
+        moviecontent.classList.add("moviesimagecontainer");
 
         return block
     }
@@ -77,17 +60,17 @@ class Movie {
 searchbtn.addEventListener('click', () => {
     movieslist.innerHTML = ""
     console.log(url + recherche.value + APIKEY);
-    fetchMovie()
+    fetchMovie();
 })
 
 function gopage(id) {
-    localStorage.setItem('movie',id)
+    localStorage.setItem('movie',id);
 }
-let pagins = document.querySelectorAll('.pagin')
+let pagins = document.querySelectorAll('.pagin');
 
 pagins.forEach(pagin => {
     pagin.addEventListener('click',()=>{
-        fetchMovie(pagin.innerText)
+        fetchMovie(pagin.innerText);
     })
 });
 function fetchMovie(page) {
@@ -106,11 +89,11 @@ function fetchMovie(page) {
                     movie.Year,
                     movie.imdbID
                 )
-                movieslist.appendChild(t.html())
+                movieslist.appendChild(t.html());
             });
             let pagination = document.querySelector(".pagination");
             pagination.style.display  = "flex";
         })
-        .catch(err => console.log({ message: err }))
+        .catch(err => console.log({ message: err }));
 }
 
