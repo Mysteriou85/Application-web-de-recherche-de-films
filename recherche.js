@@ -1,7 +1,7 @@
 const url = "http://www.omdbapi.com/?s=";
 const APIKEY = "&apikey=afa3ef9";
+let page = 1
 let movieslist = document.querySelector('#movieslist');
-let body = document.querySelector('body');
 let recherche = document.querySelector('input')
 let searchbtn = document.querySelector("button[id='Searchbutton']")
 
@@ -27,6 +27,8 @@ function gettopmovies(numberofmovies) {
         .catch(err => console.log({ message: err }))
 }
 
+
+
 class Movie {
     constructor(Title, Poster, Type, Year, imdbID) {
         this.Title = Title
@@ -49,7 +51,9 @@ class Movie {
         img.src = this.img
         Type.innerText = this.Type
         Year.innerText = this.Year
-        imdbID.href = this.imdbID
+        imdbID.href     = "page.html"
+
+        imdbID.setAttribute('onclick',`gopage("${this.imdbID}")`)
 
 
         imgcontainer.appendChild(img)
@@ -71,13 +75,30 @@ class Movie {
 }
 
 searchbtn.addEventListener('click', () => {
-    fetch(url + recherche.value + APIKEY)
+    movieslist.innerHTML = ""
+    console.log(url + recherche.value + APIKEY);
+    fetchMovie()
+})
+
+function gopage(id) {
+    localStorage.setItem('movie',id)
+}
+let pagins = document.querySelectorAll('.pagin')
+
+pagins.forEach(pagin => {
+    pagin.addEventListener('click',()=>{
+        fetchMovie(pagin.innerText)
+    })
+});
+function fetchMovie(page) {
+    let fetchUrl = page ? url + recherche.value+ `&page=${page}` + APIKEY : url + recherche.value + APIKEY
+
+    fetch(fetchUrl)
         .then(res => res.json())
         .then(data => {
-
-
+            movieslist.innerHTML=""
+            console.log(data);
             data.Search.forEach(movie => {
-                console.log(movie);
                 let t = new Movie(
                     movie.Title,
                     movie.Poster,
@@ -86,8 +107,10 @@ searchbtn.addEventListener('click', () => {
                     movie.imdbID
                 )
                 movieslist.appendChild(t.html())
-                console.log(movieslist);
             });
+            let pagination = document.querySelector(".pagination");
+            pagination.style.display  = "flex";
         })
         .catch(err => console.log({ message: err }))
-})
+}
+
