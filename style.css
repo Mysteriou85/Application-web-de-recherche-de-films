@@ -66,6 +66,23 @@ body {
     transform: translateX(-50%);
 }
 
+.valideSearch {
+    position: absolute;
+    right: 0;
+    top: 10px;
+    border-radius: 6px;
+    padding: 6px;
+    background: #11101d;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.sidebar.active .valideSearch {
+    opacity: 1;
+}
+
 .sidebar.active #btn {
     left: 90%;
 }
@@ -191,4 +208,8 @@ body {
 .sidebar.active ~ .home-content {
     width: calc(100% - 240px);
     left: 240px;
+}
+
+.content {
+    background: #1d1b31;
 }
