@@ -2,5 +2,5 @@
 TP : Créer une application web qui permet de chercher des informations sur un film via une API.
 
 Team :
-Mohammad wasin alshami
+Mohammad wasin alshami,
 Guillaume Blain
