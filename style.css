@@ -399,11 +399,18 @@ td {
 
 .synoposisInformation {
     /* background-color: crimson; */
+    margin-top: 2%;
     padding: 2%;
-    width: 99%;
+    width: 100%;
+    background-color: #4a467e;
+    border-radius: 16px;
 }
 
 .synoposisInformation p {
     font-size: 17px;
     padding-bottom: 2%;
+}
+
+.tableLigneClair {
+    background-color: #343158;
 }

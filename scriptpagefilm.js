@@ -1,9 +1,10 @@
 const url = "http://www.omdbapi.com/?i=";
 const APIKEY = "&apikey=afa3ef9";
 //let resultatRecherche = document.querySelector('.resultatRecherche');
-let recherche = 'tt2975590'
-    //document.querySelector('input')
-    //let btn = document.querySelector('button')
+let recherche = localStorage.getItem('movie');
+//let recherche = 'tt2975590';
+//document.querySelector('input')
+//let btn = document.querySelector('button')
 
 fetch(url + recherche + APIKEY + '&plot=full')
     .then((response) => response.json())
