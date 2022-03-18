@@ -1,3 +1,295 @@
+/* NAVBARE */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    background: #1d1b31;
+}
+
+.sidebar {
+    position: fixed;
+    height: 100%;
+    width: 78px;
+    background: #11101d;
+    padding: 6px 14px;
+    transition: all 0.5s ease;
+    z-index: 99999;
+}
+
+.sidebar.active {
+    width: 240px;
+}
+
+.sidebar .logo_content .logo {
+    color: #fff;
+    display: flex;
+    height: 50px;
+    width: 100%;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s ease;
+}
+
+.sidebar.active .logo_content .logo {
+    opacity: 1;
+}
+
+.logo_content .logo i {
+    font-size: 1.5rem;
+    margin-right: 5px;
+}
+
+.logo_content .logo .logo_name {
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+.sidebar #btn {
+    position: absolute;
+    color: #fff;
+    left: 50%;
+    top: 6px;
+    font-size: 1.5rem;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+    transform: translateX(-50%);
+}
+
+.valideSearch {
+    position: absolute;
+    right: 0;
+    top: 10px;
+    width: 60px;
+    border-radius: 6px;
+    padding: 6px;
+    background: #11101d;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.valideSearch:active {
+    background-color: #1d1b31;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+.sidebar.active .valideSearch {
+    opacity: 1;
+}
+
+.sidebar.active #btn {
+    left: 90%;
+}
+
+.sidebar ul {
+    margin-top: 20px;
+}
+
+.sidebar ul li {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin: 0 5px;
+    list-style: none;
+    line-height: 50px;
+}
+
+.sidebar ul li .tooltip {
+    position: absolute;
+    left: 122px;
+    top: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 6px;
+    height: 35px;
+    width: 122px;
+    background: #fff;
+    line-height: 35px;
+    text-align: center;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transition: 0s;
+    opacity: 0;
+    pointer-events: none;
+    display: block;
+}
+
+.sidebar.active ul li .tooltip {
+    display: none;
+}
+
+.sidebar ul li:hover .tooltip {
+    transition: all 0.5s ease;
+    opacity: 1;
+    top: 50%;
+}
+
+.sidebar ul li input {
+    position: absolute;
+    color: #fff;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    border-radius: 12px;
+    outline: none;
+    border: none;
+    background: #1d1b31;
+    padding-left: 50px;
+    font-size: 18px;
+}
+
+.sidebar ul li .bx-search {
+    position: absolute;
+    z-index: 99;
+    color: #fff;
+    font-size: 22px;
+    transition: all 0.5s ease;
+}
+
+.sidebar ul li .bx-search:hover {
+    background: #fff;
+    color: #1d1b31;
+}
+
+.sidebar ul li a {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 12px;
+    transition: all 0.4s ease;
+    white-space: nowrap;
+}
+
+.sidebar ul li a:hover {
+    color: #11101d;
+    background: #fff;
+}
+
+.sidebar ul li i {
+    height: 50px;
+    min-width: 50px;
+    border-radius: 12px;
+    line-height: 50px;
+    text-align: center;
+}
+
+.sidebar .links_name {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.sidebar.active .links_name {
+    opacity: 1;
+    pointer-events: auto;
+    transition: all 0.6s ease;
+}
+
+.home-content {
+    position: absolute;
+    height: 100%;
+    width: calc(100% - 78px);
+    left: 78px;
+    transition: all 0.5s ease;
+    flex-flow: column;
+    justify-content: space-between;
+}
+
+.home-content .text {
+    font-size: 25px;
+    font-weight: bold;
+    color: #fff;
+    margin: 12px;
+}
+
+.sidebar.active~.home-content {
+    width: calc(100% - 240px);
+    left: 240px;
+}
+
+.content {
+    background: #1d1b31;
+}
+
+
+/*style position film*/
+
+.movieslist {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+    padding: 5%;
+}
+
+.moviesection {
+    background-color: #11101d;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.1vw;
+    padding: 5%;
+    border-radius: 5%;
+}
+
+.moviesection a {
+    object-fit: cover;
+    height: 100%;
+    color: white;
+    text-decoration: none;
+}
+
+.moviesimagecontainer {
+    height: 80%;
+}
+
+.moviesimagecontainer img {
+    width: 100%;
+    height: 90%;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+}
+
+.pagination a {
+    text-decoration: none;
+    color: #fff;
+    padding: 8px 16px;
+}
+
+.pagination a.active {
+    background-color: #11101d;
+    border-radius: 5px;
+}
+
+.pagination a:hover:not(.active) {
+    background-color: rgba(221, 221, 221, 0.527);
+    color: #11101d;
+    border-radius: 5px;
+}
+
+
+/* MON CODE */
+
 body {
     color: white;
     background-color: #1d1b31;
@@ -5,4 +297,113 @@ body {
 
 h1 #titreFilm {
     font-size: 64px;
+    margin: 0;
+}
+
+.posterFilmSection {
+    padding: 2%;
+    /* background-color: aqua; */
+}
+
+#posterFilm {
+    border-radius: 2%;
+}
+
+.synopsisFilmSectionEnglobe {
+    background-color: #11101d;
+    border-radius: 16px 16px 16px 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.hautSynopsisFilmSection {
+    display: flex;
+}
+
+.hautSynopsisFilmSection div {
+    /* background-color: green; */
+    width: 33%;
+    align-items: center;
+}
+
+.hautSynopsisFilmSection div p {
+    text-align: center;
+}
+
+.separationHautFilmSection {
+    width: 95%;
+    height: 2px;
+    background-color: white;
+    align-self: center;
+    border-radius: 16px;
+}
+
+.noteSynopsisFilmSection {
+    display: flex;
+}
+
+.noteSynopsisFilmSection div {
+    /* background-color: lightgreen; */
+    width: 49.5%;
+    align-items: center;
+}
+
+.noteSynopsisFilmSection div p {
+    text-align: center;
+}
+
+.sectionPrincipale {
+    display: flex;
+    background-color: #343158;
+}
+
+.synopsisFilmSection {
+    padding: 2%;
+    /* background-color: lightcoral; */
+}
+
+.detailFilmSection {
+    padding: 2%;
+    /* background-color: green; */
+}
+
+.detailFilmTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.titreFilmSection {
+    /* background-color: aquamarine; */
+    padding: 0 2% 0 2%;
+}
+
+.leftColoneTableau {
+    width: 20%;
+    /* background-color: blue; */
+}
+
+thead {
+    /* background-color: chocolate; */
+    padding: 2%;
+}
+
+td {
+    /* background-color: violet; */
+    padding-left: 2%;
+    border: 2px solid white;
+}
+
+.paragrapheSynopsis {
+    font-size: 17px;
+}
+
+.synoposisInformation {
+    /* background-color: crimson; */
+    padding: 2%;
+    width: 99%;
+}
+
+.synoposisInformation p {
+    font-size: 17px;
+    padding-bottom: 2%;
 }
