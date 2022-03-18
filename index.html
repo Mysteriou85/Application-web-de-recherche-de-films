@@ -23,7 +23,7 @@
             <li>
                 <i class='bx bx-search' ></i>
                 <input type="text" placeholder="Search...">
-                <button type="submit" class="valideSearch">Envoyer</button>
+                <button type="submit" class="valideSearch" id="Searchbutton">Envoyer</button>
                 <span class="tooltip">Search</span>
             </li>
             <li>
@@ -42,14 +42,7 @@
             </li>
             <li>
                 <a href="#">
-                    <i class='bx bx-chat' ></i>
-                    <span class="links_name">Messages</span>
-                </a>
-                <span class="tooltip">Messages</span>
-            </li>
-            <li>
-                <a href="#">
-                    <i class='bx bx-chat' ></i>
+                    <i class='bx bx-heart'></i>
                     <span class="links_name">Saved</span>
                 </a>
                 <span class="tooltip">Saved</span>
@@ -63,9 +56,26 @@
             </li>      
         </ul>
     </div>
+
     <div class="home-content">
-        <div class="text">Home Content</div>
+
+        <div id="movieslist" class="movieslist">
+
+        </div>
+        <div class="pagination">
+            <a href="#" class="nextLeft"><i class='bx bxs-chevrons-left'></i></a>
+            <a href="#" class="active">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a href="#" class="nextRight"><i class='bx bxs-chevrons-right' ></i></a>
+        </div>
+    </div>
+
+
     </div>
     <script src="navbar.js"></script>
+    <script src="recherche.js"></script>
 </body>
 </html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="coucou">
+        coucou
+    </div>
+    <script>
+        let cc = document.querySelector('.coucou')
+        let thisMovie= localStorage.getItem('movie')
+        let img = document.createElement("img")
+        
+        const url = "http://www.omdbapi.com/?i=";
+        const APIKEY=  "&apikey=afa3ef9";
+
+        fetch(url + thisMovie+  APIKEY)
+        .then(res=>res.json())
+        .then(data=>{
+            console.log(data);
+            img.src = data.Poster
+            cc.appendChild(img)
+        })
+    </script>
+</body>
+</html>
