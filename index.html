@@ -1,67 +1,80 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/styleNavbar.css">
     <!-- Boxicons CDN Link -->
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <title>Movies Discovery</title>
-    <script src="script.js" defer></script>
-    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+
     <div class="sidebar">
         <div class="logo_content">
             <div class="logo">
-                <i class='bx bxs-movie-play'></i>
+                <i class='bx bxs-movie-play' ></i>
                 <div class="logo_name">Discovery Movies</div>
             </div>
             <i class='bx bx-menu' id="btn"></i>
         </div>
         <ul class="nav_list">
             <li>
-                <i class='bx bx-search'></i>
-                <input type="text" value="" placeholder="Search...">
-                <button id="Searchbutton" type="submit" class="valideSearch">Envoyer</button>
+                <i class='bx bx-search' ></i>
+                <input type="text" placeholder="Search...">
+                <button type="submit" class="valideSearch" id="Searchbutton">Envoyer</button>
                 <span class="tooltip">Search</span>
             </li>
             <li>
                 <a href="#">
-                    <i class='bx bx-grid-alt'></i>
-                    <span class="links_name">Discover</span>
+                    <i class='bx bx-grid-alt' ></i>
+                    <span class="links_name">Dashboard</span>
                 </a>
-                <span class="tooltip">Discover</span>
+                <span class="tooltip">Dashboard</span>
             </li>
             <li>
                 <a href="#">
-                    <i class='bx bx-archive'></i>
-                    <span class="links_name">Bookmarks</span>
+                    <i class='bx bx-user' ></i>
+                    <span class="links_name">User</span>
                 </a>
-                <span class="tooltip">Bookmarks</span>
+                <span class="tooltip">User</span>
             </li>
             <li>
                 <a href="#">
-                    <i class='bx bx-user'></i>
-                    <span class="links_name">Profile</span>
+                    <i class='bx bx-heart'></i>
+                    <span class="links_name">Saved</span>
                 </a>
-                <span class="tooltip">Profile</span>
+                <span class="tooltip">Saved</span>
             </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-cog' ></i>
+                    <span class="links_name">Settings</span>
+                </a>
+                <span class="tooltip">Settings</span>
+            </li>      
         </ul>
     </div>
-    <div class="home-content">
 
+    <div class="home-content">
         <div id="movieslist" class="movieslist">
 
         </div>
+            <div class="pagination">
+                <a href="#" class="nextLeft"><i class='bx bxs-chevrons-left'></i></a>
+                <a href="#1" class="pagin un" class="active">1</a>
+                <a href="#2" class="pagin deux">2</a>
+                <a href="#3" class="pagin trois">3</a>
+                <a href="#4" class="pagin quatre">4</a>
+                <a href="#5" class="pagin cinque">5</a>
+                <a href="#" class="nextRight" id="pagEnd"><i class='bx bxs-chevrons-right' ></i></a>
+            </div>
+        </div>
     </div>
 
-
-    <script src="navbar.js"></script>
-    <script src="script.js" defer></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/recherche.js"></script>
 </body>
-
 </html>
