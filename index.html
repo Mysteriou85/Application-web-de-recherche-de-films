@@ -4,16 +4,86 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <title>Movies Discovery</title>
+    
+    <link rel="stylesheet" href="style.css">
     <script src="js/recherche.js" defer></script>
 </head>
 <body>
-    <div class="bulb">azd</div>
-    <input type="text" value="Avengers">
-    <button type="submit">valid</button>
-
-    <div class="box">
-
+    <div class="sidebar">
+        <div class="logo_content">
+            <div class="logo">
+                <i class='bx bxs-movie-play'></i>
+                <div class="logo_name">Discovery Movies</div>
+            </div>
+            <i class='bx bx-menu' id="btn"></i>
+        </div>
+        <ul class="nav_list">
+            <li>
+                <i class='bx bx-search'></i>
+                <input type="text" value="" placeholder="Search..." id="SearchInput">
+                <button id="Searchbutton" type="submit" class="valideSearch">Envoyer</button>
+                <span class="tooltip">Search</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-grid-alt'></i>
+                    <span class="links_name">Discover</span>
+                </a>
+                <span class="tooltip">Discover</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-archive'></i>
+                    <span class="links_name">Bookmarks</span>
+                </a>
+                <span class="tooltip">Bookmarks</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-user'></i>
+                    <span class="links_name">Profile</span>
+                </a>
+                <span class="tooltip">Profile</span>
+            </li>
+            <!--<li>
+                <a href="#">
+                    <i class='bx bx-chat'></i>
+                    <span class="links_name">Saved</span>
+                </a>
+                <span class="tooltip">Saved</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-cog'></i>
+                    <span class="links_name">Settings</span>
+                </a>
+                <span class="tooltip">Settings</span>
+            </li> -->
+        </ul>
     </div>
+    <div class="home-content">
+        
+        <div id="movieslist" class="movieslist">
+
+        </div>
+        <div class="pagination">
+            <a href="#" class="next nextLeft"><i class='bx bxs-chevrons-left'></i></a>
+            <a href="#1" class="pagin un"class="active">1</a>
+            <a href="#2" class="pagin deux">2</a>
+            <a href="#3" class="pagin trois">3</a>
+            <a href="#4" class="pagin quatre">4</a>
+            <a href="#5" class="pagin cinque">5</a>
+            <a id="" href="#" class="next nextRight"><i class='bx bxs-chevrons-right' ></i></a>
+        </div>
+    </div>
+    </div>
+
+
+    <script src="navbar.js"></script>
+    <script src="script.js" defer></script>
 </body>
+
 </html>
