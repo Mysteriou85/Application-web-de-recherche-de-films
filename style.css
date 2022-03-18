@@ -288,7 +288,7 @@ body {
 }
 
 
-/* MON CODE */
+/* CODE GUILLAUME */
 
 body {
     color: white;
@@ -302,7 +302,6 @@ h1 #titreFilm {
 
 .posterFilmSection {
     padding: 2%;
-    /* background-color: aqua; */
 }
 
 #posterFilm {
@@ -321,7 +320,6 @@ h1 #titreFilm {
 }
 
 .hautSynopsisFilmSection div {
-    /* background-color: green; */
     width: 33%;
     align-items: center;
 }
@@ -343,7 +341,6 @@ h1 #titreFilm {
 }
 
 .noteSynopsisFilmSection div {
-    /* background-color: lightgreen; */
     width: 49.5%;
     align-items: center;
 }
@@ -359,12 +356,10 @@ h1 #titreFilm {
 
 .synopsisFilmSection {
     padding: 2%;
-    /* background-color: lightcoral; */
 }
 
 .detailFilmSection {
     padding: 2%;
-    /* background-color: green; */
 }
 
 .detailFilmTable {
@@ -373,22 +368,18 @@ h1 #titreFilm {
 }
 
 .titreFilmSection {
-    /* background-color: aquamarine; */
     padding: 0 2% 0 2%;
 }
 
 .leftColoneTableau {
     width: 20%;
-    /* background-color: blue; */
 }
 
 thead {
-    /* background-color: chocolate; */
     padding: 2%;
 }
 
 td {
-    /* background-color: violet; */
     padding-left: 2%;
     border: 2px solid white;
 }
@@ -398,7 +389,6 @@ td {
 }
 
 .synoposisInformation {
-    /* background-color: crimson; */
     margin-top: 2%;
     padding: 2%;
     width: 100%;
