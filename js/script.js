@@ -1,33 +1,64 @@
-const url = "http://www.omdbapi.com/?s";
+const url = "http://www.omdbapi.com/?s=";
 const APIKEY=  "&apikey=afa3ef9";
-let pour = document.querySelector('.bulb');
+let body = document.querySelector('body');
+let recherche = document.querySelector('input')
+let btn = document.querySelector('button')
 
-console.log(pour);
-// fetch(url+"?s=spider man&apikey=f6e256e1")
-// // fetch("http://www.omdbapi.com/?t=spider+man&apikey=f6e256e1")
-// .then(res=>res.json())
-// .then(data=>console.log(data))
-
-
-class t {
-    constructor(nom,color){
-        this.nom = nom
-        this.color = color
-    }
-    try(){
-        console.log(`t = ${this.nom} + ${this.color}`);
+class Movie {
+    constructor(Title,Poster,Type,Year,imdbID){
+        this.Title = Title
+        this.img = Poster
+        this.Type = Type
+        this.Year = Year
+        this.imdbID = imdbID
     }
     html(){
-        let h2 = document.createElement('h2')
-        let p = document.createElement('p')
-        let block = document.createElement('div')
-        h2.innerText =this.nom
-        p.innerText =this.color
-        block.appendChild(h2)
-        block.appendChild(p)
+        let block   = document.createElement('div')
+
+        let h2      = document.createElement('h2')
+        let img     = document.createElement('img')
+        let Type    = document.createElement('p')
+        let Year    = document.createElement('p')
+        let imdbID  = document.createElement('a')
+
+        h2.innerText    = this.Title
+        img.src         = this.img
+        Type.innerText  = this.Type
+        Year.innerText  = this.Year
+        imdbID.href     = this.imdbID
+
+        imdbID.appendChild(img)
+        imdbID.appendChild(h2)
+        imdbID.appendChild(Type)
+        imdbID.appendChild(Year)
+        
+        block.appendChild(imdbID)
+        
         return block
     }
 }
-let tbob = new t('bob',"red")
-let fich=tbob.html()
-pour.append(fich)
+
+btn.addEventListener('click',()=>{
+    fetch(url + recherche.value+  APIKEY)
+    .then(res=>res.json())
+    .then(data=>{
+        
+        
+        data.Search.forEach(movie => {
+            console.log(movie);
+            let t = new Movie(
+                movie.Title,
+                movie.Poster,
+                movie.Type,
+                movie.Year,
+                movie.imdbID
+            )
+            body.appendChild(t.html())
+            console.log( body);
+        });
+    })
+    .catch(err=>console.log({message:err}))
+})
+
+
+
