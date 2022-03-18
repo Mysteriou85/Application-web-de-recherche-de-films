@@ -4,30 +4,8 @@ let page = 1
 let movieslist = document.querySelector('#movieslist');
 let recherche = document.querySelector('input')
 let searchbtn = document.querySelector("button[id='Searchbutton']")
-
-function gettopmovies(numberofmovies) {
-    fetch(url + recherche.value + APIKEY)
-        .then(res => res.json())
-        .then(data => {
-
-
-            data.Search.forEach(movie => {
-                console.log(movie);
-                let t = new Movie(
-                    movie.Title,
-                    movie.Poster,
-                    movie.Type,
-                    movie.Year,
-                    movie.imdbID
-                )
-                movieslist.appendChild(t.html())
-                console.log(movieslist);
-            });
-        })
-        .catch(err => console.log({ message: err }))
-}
-
-
+let pagins = document.querySelectorAll('.pagin')
+let nexts = document.querySelectorAll('.next')
 
 class Movie {
     constructor(Title, Poster, Type, Year, imdbID) {
@@ -51,10 +29,9 @@ class Movie {
         img.src = this.img
         Type.innerText = this.Type
         Year.innerText = this.Year
-        imdbID.href     = "page.html"
+        imdbID.href     = "pagefilm.html"
 
         imdbID.setAttribute('onclick',`gopage("${this.imdbID}")`)
-
 
         imgcontainer.appendChild(img)
         imgcontainer.appendChild(h2)
@@ -80,16 +57,25 @@ searchbtn.addEventListener('click', () => {
     fetchMovie()
 })
 
-function gopage(id) {
-    localStorage.setItem('movie',id)
-}
-let pagins = document.querySelectorAll('.pagin')
-
 pagins.forEach(pagin => {
     pagin.addEventListener('click',()=>{
         fetchMovie(pagin.innerText)
     })
 });
+nexts.forEach(next => {
+    next.addEventListener('click',(e)=>{
+        console.log(next.classList[1]);
+        if(next.classList[1] === "nextRight" && page < 5){
+            page++
+        }
+        
+        if (next.classList[1] === "nextLeft" && page > 1) {
+            page--
+        }
+        fetchMovie(page)
+    })
+});
+
 function fetchMovie(page) {
     let fetchUrl = page ? url + recherche.value+ `&page=${page}` + APIKEY : url + recherche.value + APIKEY
 
@@ -110,6 +96,10 @@ function fetchMovie(page) {
             });
         })
         .catch(err => console.log({ message: err }))
+        console.log(page);
+}
+function gopage(id) {
+    localStorage.setItem('movie',id)
 }
 
 
