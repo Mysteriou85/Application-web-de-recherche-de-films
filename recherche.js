@@ -51,7 +51,7 @@ class Movie {
         img.src = this.img
         Type.innerText = this.Type
         Year.innerText = this.Year
-        imdbID.href     = "page.html"
+        imdbID.href     = "pagefilm.html"
 
         imdbID.setAttribute('onclick',`gopage("${this.imdbID}")`)
 
