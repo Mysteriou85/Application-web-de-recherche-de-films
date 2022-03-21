@@ -17,6 +17,7 @@ class Movie {
     this.Year = Year;
     this.imdbID = imdbID;
   }
+  // revoie un block  film en html
   html() {
     let block = document.createElement("div");
 
