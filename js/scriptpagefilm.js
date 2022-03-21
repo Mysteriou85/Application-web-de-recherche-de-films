@@ -1,4 +1,4 @@
-const url = "http://www.omdbapi.com/?i=";
+const url = "https://www.omdbapi.com/?i=";
 const APIKEY = "&apikey=afa3ef9";
 //let resultatRecherche = document.querySelector('.resultatRecherche');
 let recherche = localStorage.getItem('movie');
