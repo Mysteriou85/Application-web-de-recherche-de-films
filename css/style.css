@@ -15,11 +15,6 @@
   margin: 12px;
 }
 
-.sidebar.active ~ .home-content {
-  width: calc(100% - 240px);
-  left: 240px;
-}
-
 .content {
   background: #1d1b31;
 }

@@ -6,7 +6,6 @@
   font-family: "Poppins", sans-serif;
 }
 
-
 body {
   position: relative;
   min-height: 100vh;
@@ -216,31 +215,25 @@ body {
   margin: 12px;
 }
 
-.sidebar.active ~ .home-content {
-  width: calc(100% - 240px);
-  left: 240px;
-}
-
 .content {
   background: #1d1b31;
 }
 
 @media screen and (max-width: 768px) {
-    .sidebar #btn {
-        left: 120px;
-    }
+  .sidebar #btn {
+    left: 120px;
+  }
 
-    .sidebar {
-        left: -90px;
-    }
+  .sidebar {
+    left: -90px;
+  }
 
-    .sidebar.active {
-        left: 0;
-    }
-    .home-content {
-      left: 0;
-      width: 100%;
-      top: 25px;
-    }
+  .sidebar.active {
+    left: 0;
+  }
+  .home-content {
+    left: 0;
+    width: 100%;
+    top: 25px;
+  }
 }
-
