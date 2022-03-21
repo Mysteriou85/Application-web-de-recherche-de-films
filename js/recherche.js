@@ -4,6 +4,10 @@ let page = 1;
 let movieslist = document.querySelector('#movieslist');
 let recherche = document.querySelector('input');
 let searchbtn = document.querySelector("button[id='Searchbutton']")
+let pagins = document.querySelectorAll('.pagin');
+let nexts = document.querySelectorAll('.next')
+
+
 
 class Movie {
     constructor(Title, Poster, Type, Year, imdbID) {
@@ -66,13 +70,29 @@ searchbtn.addEventListener('click', () => {
 function gopage(id) {
     localStorage.setItem('movie', id);
 }
-let pagins = document.querySelectorAll('.pagin');
+
 
 pagins.forEach(pagin => {
     pagin.addEventListener('click', () => {
         fetchMovie(pagin.innerText);
     })
 });
+
+
+nexts.forEach(next => {
+    next.addEventListener('click', (e) => {
+        console.log(next.classList[1]);
+        if (next.classList[1] === "nextRight" && page < 5) {
+            page++
+        }
+
+        if (next.classList[1] === "nextLeft" && page > 1) {
+            page--
+        }
+        fetchMovie(page)
+    })
+});
+
 
 function fetchMovie(page) {
     let fetchUrl = page ? url + recherche.value + `&page=${page}` + APIKEY : url + recherche.value + APIKEY
