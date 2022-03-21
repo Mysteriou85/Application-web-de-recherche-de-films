@@ -127,3 +127,50 @@ td {
 .tableLigneClair {
     background-color: #343158;
 }
+
+@media all and (max-width: 920px) {
+    .posterFilmSection {
+      align-self: center;
+    }
+  
+    #posterFilm {
+      max-width: 100%;
+    }
+  
+    #titreFilm {
+      font-size: 32px;
+    }
+  
+    .sectionPrincipale {
+      flex-direction: column;
+    }
+  }
+  
+  @media all and (max-width: 360px) {
+    #titreFilm {
+      font-size: 24px;
+    }
+  
+    .sectionPrincipale {
+      flex-direction: column;
+    }
+  
+    .noteSynopsisFilmSection {
+      flex-direction: column;
+    }
+  
+    .noteSynopsisFilmSection div {
+      width: 100%;
+      align-self: center;
+    }
+  
+    .hautSynopsisFilmSection {
+      flex-direction: column;
+    }
+  
+    .hautSynopsisFilmSection div {
+      width: 100%;
+      align-self: center;
+    }
+  }
+  
