@@ -227,15 +227,20 @@ body {
 
 @media screen and (max-width: 768px) {
     .sidebar #btn {
-        left: 110px;
+        left: 120px;
     }
 
     .sidebar {
-        left: -25%;
+        left: -90px;
     }
 
     .sidebar.active {
         left: 0;
+    }
+    .home-content {
+      left: 0;
+      width: 100%;
+      top: 25px;
     }
 }
 
