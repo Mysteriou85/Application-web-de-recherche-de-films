@@ -105,10 +105,8 @@ function fetchMovie(page) {
   fetch(fetchUrl)
     .then((res) => res.json())
     .then((data) => {
-      console.log(typeof data.Response);
       // si reponse est bonne
       if (data.Response == "True") {
-        console.log(data.Response);
         data.Search.forEach((movie) => {
           let t = new Movie(
             movie.Title,
@@ -124,7 +122,6 @@ function fetchMovie(page) {
       }
       // si reponse fause
       else {
-        console.log(data.Response, 2);
         let fail = document.createElement("p");
         let failImage = document.createElement("img");
         let failcontent = document.createElement("div");
@@ -138,7 +135,6 @@ function fetchMovie(page) {
         failcontent.appendChild(failImage);
         failcontent.appendChild(fail);
         movieslist.appendChild(failcontent);
-        console.log(movieslist);
         pagination.style.display = "none";
       }
     })
