@@ -1,0 +1,108 @@
+                                        /*style position film*/
+                                        
+                                        .movieslist {
+                                            display: grid;
+                                            grid-template-columns: repeat(5, 1fr);
+                                            grid-gap: 10px;
+                                            grid-auto-rows: minmax(100px, auto);
+                                            padding: 5%;
+                                        }
+                                        
+                                        .moviesection {
+                                            /* background-color: #11101d; */
+                                            display: flex;
+                                            flex-direction: column;
+                                            justify-content: center;
+                                            align-items: center;
+                                            text-align: center;
+                                            font-size: 0.8vw;
+                                            padding: 5%;
+                                            border-radius: 5%;
+                                        }
+                                        
+                                        .moviesection a {
+                                            object-fit: cover;
+                                            height: 100%;
+                                            color: white;
+                                            text-decoration: none;
+                                            position: relative;
+                                            width: 100%;
+                                            z-index: 1;
+                                        }
+                                        
+                                        .moviestextcontainer {
+                                            opacity: 0%;
+                                            transition: 0.5s;
+                                            background: #11101d;
+                                            position: absolute;
+                                            width: 100%;
+                                            z-index: 2;
+                                            bottom: 20%;
+                                            font-size: medium;
+                                        }
+                                        
+                                        .moviesection a:hover .moviestextcontainer {
+                                            opacity: 80%;
+                                        }
+                                        
+                                        .moviesimagecontainer {
+                                            height: 80%;
+                                        }
+                                        
+                                        .moviesimagecontainer img {
+                                            visibility: hidden;
+                                            width: 100%;
+                                            height: 90%;
+                                        }
+                                        
+                                        .pagination {
+                                            display: none;
+                                            justify-content: center;
+                                        }
+                                        
+                                        .pagination a {
+                                            text-decoration: none;
+                                            color: #fff;
+                                            padding: 8px 16px;
+                                        }
+                                        
+                                        .pagination a.active {
+                                            background-color: #11101d;
+                                            border-radius: 5px;
+                                        }
+                                        
+                                        .pagination a:hover:not(.active) {
+                                            background-color: rgba(221, 221, 221, 0.527);
+                                            color: #11101d;
+                                            border-radius: 5px;
+                                        }
+                                        
+                                        @media screen and (max-width:1300px) {
+                                            .movieslist {
+                                                display: grid;
+                                                grid-template-columns: repeat(3, 1fr);
+                                                grid-gap: 10px;
+                                                grid-auto-rows: minmax(100px, auto);
+                                                padding: 5%;
+                                            }
+                                        }
+                                        
+                                        @media screen and (max-width:874px) {
+                                            .movieslist {
+                                                display: grid;
+                                                grid-template-columns: repeat(2, 1fr);
+                                                grid-gap: 10px;
+                                                grid-auto-rows: minmax(100px, auto);
+                                                padding: 5%;
+                                            }
+                                        }
+                                        
+                                        @media screen and (max-width:390px) {
+                                            .movieslist {
+                                                display: grid;
+                                                grid-template-columns: repeat(1, 1fr);
+                                                grid-gap: 10px;
+                                                grid-auto-rows: minmax(100px, auto);
+                                                padding: 5%;
+                                            }
+                                        }
