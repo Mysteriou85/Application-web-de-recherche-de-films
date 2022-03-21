@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
 * {
     margin: 0;
     padding: 0;
@@ -110,7 +110,7 @@ body {
 
 .sidebar ul li .tooltip {
     position: absolute;
-    left: 122px;
+    left: 111px;
     top: 0;
     transform: translate(-50%, -50%);
     border-radius: 6px;
@@ -215,11 +215,29 @@ body {
     margin: 12px;
 }
 
-.sidebar.active~.home-content {
+
+/* .sidebar.active~.home-content {
     width: calc(100% - 240px);
     left: 240px;
-}
+} */
 
 .content {
     background: #1d1b31;
+}
+
+@media screen and (max-width: 768px) {
+    .sidebar #btn {
+        left: 120px;
+    }
+    .sidebar {
+        left: -90px;
+    }
+    .sidebar.active {
+        left: 0;
+    }
+    .home-content {
+        left: 0;
+        width: 100%;
+        top: 25px;
+    }
 }

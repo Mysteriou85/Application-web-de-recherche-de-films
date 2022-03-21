@@ -5,7 +5,9 @@ let movieslist = document.querySelector('#movieslist');
 let recherche = document.querySelector('input');
 let searchbtn = document.querySelector("button[id='Searchbutton']")
 let pagins = document.querySelectorAll('.pagin');
-let nexts = document.querySelectorAll('.next')
+let nexts = document.querySelectorAll('.next');
+let home = document.querySelector(".home-content");
+let pagination = document.querySelector(".pagination");
 
 
 
@@ -61,59 +63,86 @@ class Movie {
     }
 }
 
-searchbtn.addEventListener('click', () => {
-    movieslist.innerHTML = ""
-    console.log(url + recherche.value + APIKEY);
-    fetchMovie();
-})
-
-function gopage(id) {
-    localStorage.setItem('movie', id);
-}
-
-
-pagins.forEach(pagin => {
-    pagin.addEventListener('click', () => {
-        fetchMovie(pagin.innerText);
-    })
+recherche.addEventListener("keyup", function(event) {
+    if (event.keyCode === 13) {
+        event.preventDefault();
+        searchbtn.click();
+    }
 });
 
+// lance ca recherche
+searchbtn.addEventListener("click", () => {
+    fetchMovie();
+});
 
-nexts.forEach(next => {
-    next.addEventListener('click', (e) => {
-        console.log(next.classList[1]);
+//  gere la pagination numero
+pagins.forEach((pagin) => {
+    pagin.addEventListener("click", () => {
+        fetchMovie(pagin.innerText);
+    });
+});
+
+//  gere la pagination fléché
+nexts.forEach((next) => {
+    next.addEventListener("click", () => {
         if (next.classList[1] === "nextRight" && page < 5) {
-            page++
+            page++;
         }
 
         if (next.classList[1] === "nextLeft" && page > 1) {
-            page--
+            page--;
         }
-        fetchMovie(page)
-    })
+        fetchMovie(page);
+    });
 });
 
-
+// function assemble l'url et affiche le contenue dans le main
 function fetchMovie(page) {
-    let fetchUrl = page ? url + recherche.value + `&page=${page}` + APIKEY : url + recherche.value + APIKEY
+    movieslist.innerHTML = "";
+    let fetchUrl = page ?
+        url + recherche.value + `&page=${page}` + APIKEY :
+        url + recherche.value + APIKEY;
 
     fetch(fetchUrl)
-        .then(res => res.json())
-        .then(data => {
-            movieslist.innerHTML = ""
-            console.log(data);
-            data.Search.forEach(movie => {
-                let t = new Movie(
-                    movie.Title,
-                    movie.Poster,
-                    movie.Type,
-                    movie.Year,
-                    movie.imdbID
-                )
-                movieslist.appendChild(t.html());
-            });
-            let pagination = document.querySelector(".pagination");
-            pagination.style.display = "flex";
+        .then((res) => res.json())
+        .then((data) => {
+            // si reponse est bonne
+            if (data.Response == "True") {
+                data.Search.forEach((movie) => {
+                    let t = new Movie(
+                        movie.Title,
+                        movie.Poster,
+                        movie.Type,
+                        movie.Year,
+                        movie.imdbID
+                    );
+                    movieslist.appendChild(t.html());
+                });
+
+                pagination.style.display = "flex";
+            }
+            // si reponse fause
+            else {
+                let fail = document.createElement("p");
+                let failImage = document.createElement("img");
+                let failcontent = document.createElement("div");
+
+                failImage.src = "https://c.tenor.com/b9k82qg9_NAAAAAd/sonic-dance.gif";
+                fail.innerText =
+                    "domage petit apprend tes nom de film et on verra plus tard";
+
+                failcontent.style.gridColumn = 3;
+
+                failcontent.appendChild(failImage);
+                failcontent.appendChild(fail);
+                movieslist.appendChild(failcontent);
+                pagination.style.display = "none";
+            }
         })
-        .catch(err => console.log({ message: err }));
+        .catch((err) => console.log({ message: err }));
+}
+
+// fonction permetant stocker les info du film click pour la page 2
+function gopage(id) {
+    localStorage.setItem("movie", id);
 }

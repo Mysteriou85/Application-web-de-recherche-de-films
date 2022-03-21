@@ -14,7 +14,6 @@ p {
 
 .posterFilmSection {
     padding: 2%;
-    /* background-color: aqua; */
 }
 
 #posterFilm {
@@ -33,7 +32,6 @@ p {
 }
 
 .hautSynopsisFilmSection div {
-    /* background-color: green; */
     width: 33%;
     align-items: center;
 }
@@ -55,7 +53,6 @@ p {
 }
 
 .noteSynopsisFilmSection div {
-    /* background-color: lightgreen; */
     width: 49.5%;
     align-items: center;
 }
@@ -67,16 +64,15 @@ p {
 .sectionPrincipale {
     display: flex;
     background-color: #343158;
+    width: 100%;
 }
 
 .synopsisFilmSection {
     padding: 2%;
-    /* background-color: lightcoral; */
 }
 
 .detailFilmSection {
     padding: 2%;
-    /* background-color: green; */
 }
 
 .detailFilmTable {
@@ -86,22 +82,18 @@ p {
 }
 
 .titreFilmSection {
-    /* background-color: aquamarine; */
     padding: 0 2% 0 2%;
 }
 
 .leftColoneTableau {
     width: 20%;
-    /* background-color: blue; */
 }
 
 thead {
-    /* background-color: chocolate; */
     padding: 2%;
 }
 
 td {
-    /* background-color: violet; */
     padding-left: 2%;
     border: 2px solid white;
 }
@@ -111,7 +103,6 @@ td {
 }
 
 .synoposisInformation {
-    /* background-color: crimson; */
     margin-top: 2%;
     padding: 2%;
     width: 100%;
@@ -126,4 +117,42 @@ td {
 
 .tableLigneClair {
     background-color: #343158;
+}
+
+@media all and (max-width:920px) {
+    .posterFilmSection {
+        align-self: center;
+    }
+    #posterFilm {
+        max-width: 100%;
+    }
+    #titreFilm {
+        font-size: 32px;
+    }
+    .sectionPrincipale {
+        flex-direction: column;
+    }
+}
+
+@media all and (max-width:360px) {
+    #titreFilm {
+        font-size: 24px;
+    }
+    .sectionPrincipale {
+        flex-direction: column;
+    }
+    .noteSynopsisFilmSection {
+        flex-direction: column;
+    }
+    .noteSynopsisFilmSection div {
+        width: 100%;
+        align-self: center;
+    }
+    .hautSynopsisFilmSection {
+        flex-direction: column;
+    }
+    .hautSynopsisFilmSection div {
+        width: 100%;
+        align-self: center;
+    }
 }
