@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,33 +11,34 @@
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <title>Movies Discovery</title>
 </head>
+
 <body>
-   
+
     <div class="sidebar">
         <div class="logo_content">
             <div class="logo">
-                <i class='bx bxs-movie-play' ></i>
+                <i class='bx bxs-movie-play'></i>
                 <div class="logo_name">Discovery Movies</div>
             </div>
             <i class='bx bx-menu' id="btn"></i>
         </div>
         <ul class="nav_list">
             <li>
-                <i class='bx bx-search' ></i>
+                <i class='bx bx-search'></i>
                 <input type="text" placeholder="Search...">
                 <button type="submit" class="valideSearch" id="Searchbutton">Envoyer</button>
                 <span class="tooltip">Search</span>
             </li>
             <li>
                 <a href="#">
-                    <i class='bx bx-grid-alt' ></i>
+                    <i class='bx bx-grid-alt'></i>
                     <span class="links_name">Dashboard</span>
                 </a>
                 <span class="tooltip">Dashboard</span>
             </li>
             <li>
                 <a href="#">
-                    <i class='bx bx-user' ></i>
+                    <i class='bx bx-user'></i>
                     <span class="links_name">User</span>
                 </a>
                 <span class="tooltip">User</span>
@@ -50,11 +52,11 @@
             </li>
             <li>
                 <a href="#">
-                    <i class='bx bx-cog' ></i>
+                    <i class='bx bx-cog'></i>
                     <span class="links_name">Settings</span>
                 </a>
                 <span class="tooltip">Settings</span>
-            </li>      
+            </li>
         </ul>
     </div>
 
@@ -62,21 +64,21 @@
         <div id="movieslist" class="movieslist">
 
         </div>
-            <div class="pagination">
-                <a href="#" class="next nextLeft"><i class='bx bxs-chevrons-left'></i></a>
-                <a href="#1" class="pagin un" class="active">1</a>
-                <a href="#2" class="pagin deux">2</a>
-                <a href="#3" class="pagin trois">3</a>
-                <a href="#4" class="pagin quatre">4</a>
-                <a href="#5" class="pagin cinque">5</a>
-                <a href="#" class="next nextRight" id="pagEnd"><i class='bx bxs-chevrons-right' ></i></a>
-            </div>
+        <div class="pagination">
+            <a href="#" class="next nextLeft"><i class='bx bxs-chevrons-left'></i></a>
+            <a href="#1" class="pagin un" class="active">1</a>
+            <a href="#2" class="pagin deux">2</a>
+            <a href="#3" class="pagin trois">3</a>
+            <a href="#4" class="pagin quatre">4</a>
+            <a href="#5" class="pagin cinque">5</a>
+            <a href="#" class="next nextRight" id="pagEnd"><i class='bx bxs-chevrons-right'></i></a>
         </div>
     </div>
-
-
+    </div>
+    <div class="fond-mobile "></div>
 
     <script src="js/navbar.js"></script>
     <script src="js/recherche.js"></script>
 </body>
+
 </html>
