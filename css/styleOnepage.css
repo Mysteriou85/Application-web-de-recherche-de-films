@@ -1,169 +1,169 @@
 body {
-  background-color: #1d1b31;
-  overflow: hidden;
+    background-color: #1d1b31;
 }
 
 #titreFilm {
-  font-size: 64px;
-  margin: 0;
-  color: #fff;
+    font-size: 64px;
+    margin: 0;
+    color: #fff;
 }
 
 p {
-  color: #fff;
+    color: #fff;
 }
 
 .posterFilmSection {
-  padding: 2%;
+    padding: 2%;
 }
 
 #posterFilm {
-  border-radius: 2%;
-  transition: 0.5s;
-  animation: slideBottom 2.5s;
+    border-radius: 2%;
+    transition: 0.5s;
+    animation: slideBottom 2.5s;
 }
 
 .synopsisFilmSectionEnglobe {
-  background-color: #11101d;
-  border-radius: 16px 16px 16px 16px;
-  display: flex;
-  flex-direction: column;
+    background-color: #11101d;
+    border-radius: 16px 16px 16px 16px;
+    display: flex;
+    flex-direction: column;
 }
 
 .hautSynopsisFilmSection {
-  display: flex;
+    display: flex;
 }
 
 .hautSynopsisFilmSection div {
-  width: 33%;
-  align-items: center;
+    width: 33%;
+    align-items: center;
 }
 
 .hautSynopsisFilmSection div p {
-  text-align: center;
+    text-align: center;
 }
 
 .separationHautFilmSection {
-  width: 95%;
-  height: 2px;
-  background-color: white;
-  align-self: center;
-  border-radius: 16px;
+    width: 95%;
+    height: 2px;
+    background-color: white;
+    align-self: center;
+    border-radius: 16px;
 }
 
 .noteSynopsisFilmSection {
-  display: flex;
+    display: flex;
 }
 
 .noteSynopsisFilmSection div {
-  width: 49.5%;
-  align-items: center;
+    width: 49.5%;
+    align-items: center;
 }
 
 .noteSynopsisFilmSection div p {
-  text-align: center;
+    text-align: center;
 }
 
 .sectionPrincipale {
-  display: flex;
-  background-color: #343158;
-  width: 100%;
+    display: flex;
+    background-color: #343158;
+    width: 100%;
 }
 
 .synopsisFilmSection {
-  padding: 2%;
+    padding: 2%;
 }
 
 .detailFilmSection {
-  padding: 2%;
+    padding: 2%;
 }
 
 .detailFilmTable {
-  width: 100%;
-  border-collapse: collapse;
-  color: #fff;
+    width: 100%;
+    border-collapse: collapse;
+    color: #fff;
 }
 
 .titreFilmSection {
-  padding: 0 2% 0 2%;
+    padding: 0 2% 0 2%;
 }
 
 .leftColoneTableau {
-  width: 20%;
+    width: 20%;
 }
 
 thead {
-  padding: 2%;
+    padding: 2%;
 }
 
 td {
-  padding-left: 2%;
-  border: 2px solid white;
+    padding-left: 2%;
+    border: 2px solid white;
 }
 
 .paragrapheSynopsis {
-  font-size: 17px;
+    font-size: 17px;
 }
 
 .synoposisInformation {
-  margin-top: 2%;
-  padding: 2%;
-  width: 100%;
-  background-color: #4a467e;
-  border-radius: 16px;
+    margin-top: 2%;
+    padding: 2%;
+    width: 100%;
+    background-color: #4a467e;
+    border-radius: 16px;
 }
 
 .synoposisInformation p {
-  font-size: 17px;
-  padding-bottom: 2%;
+    font-size: 17px;
+    padding-bottom: 2%;
 }
 
 .tableLigneClair {
-  background-color: #343158;
+    background-color: #343158;
 }
 
 @keyframes slideBottom {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
+
 @media all and (max-width: 920px) {
-  .posterFilmSection {
-    align-self: center;
-  }
-  #posterFilm {
-    max-width: 100%;
-  }
-  #titreFilm {
-    font-size: 32px;
-  }
-  .sectionPrincipale {
-    flex-direction: column;
-  }
+    .posterFilmSection {
+        align-self: center;
+    }
+    #posterFilm {
+        max-width: 100%;
+    }
+    #titreFilm {
+        font-size: 32px;
+    }
+    .sectionPrincipale {
+        flex-direction: column;
+    }
 }
 
 @media all and (max-width: 360px) {
-  #titreFilm {
-    font-size: 24px;
-  }
-  .sectionPrincipale {
-    flex-direction: column;
-  }
-  .noteSynopsisFilmSection {
-    flex-direction: column;
-  }
-  .noteSynopsisFilmSection div {
-    width: 100%;
-    align-self: center;
-  }
-  .hautSynopsisFilmSection {
-    flex-direction: column;
-  }
-  .hautSynopsisFilmSection div {
-    width: 100%;
-    align-self: center;
-  }
+    #titreFilm {
+        font-size: 24px;
+    }
+    .sectionPrincipale {
+        flex-direction: column;
+    }
+    .noteSynopsisFilmSection {
+        flex-direction: column;
+    }
+    .noteSynopsisFilmSection div {
+        width: 100%;
+        align-self: center;
+    }
+    .hautSynopsisFilmSection {
+        flex-direction: column;
+    }
+    .hautSynopsisFilmSection div {
+        width: 100%;
+        align-self: center;
+    }
 }
