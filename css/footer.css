@@ -32,6 +32,7 @@ footer ul li a {
     color: white;
     text-decoration: none;
     font-size: medium;
+    display: flex;
 }
 
 footer ul li {
@@ -40,7 +41,7 @@ footer ul li {
     margin: 10px;
 }
 
-footer ul li svg {
+footer ul li a svg {
     margin-left: 10px;
 }
 
