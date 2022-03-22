@@ -9,7 +9,6 @@
 }
 
 .moviesection {
-  /* background-color: #11101d; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -76,6 +75,31 @@
   color: #11101d;
   border-radius: 5px;
 }
+
+.moviesection {
+  transition: 0.5s;
+  animation: slideDown 2.5s;
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.affiche {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.171);
+  z-index: 50;
+}
+
 /* media */
 @media screen and (max-width: 1300px) {
   .movieslist {
@@ -97,15 +121,6 @@
   }
 }
 
-@media screen and (max-width: 768px) {
-  .affiche {
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.171);
-    z-index: 50;
-  }
-}
 @media screen and (max-width: 390px) {
   .movieslist {
     display: grid;
