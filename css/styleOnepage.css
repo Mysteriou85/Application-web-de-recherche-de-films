@@ -18,6 +18,8 @@ p {
 
 #posterFilm {
     border-radius: 2%;
+    transition: 0.5s;
+    animation: slideBottom 2.5s;
 }
 
 .synopsisFilmSectionEnglobe {
@@ -119,7 +121,16 @@ td {
     background-color: #343158;
 }
 
-@media all and (max-width:920px) {
+@keyframes slideBottom {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@media all and (max-width: 920px) {
     .posterFilmSection {
         align-self: center;
     }
@@ -134,7 +145,7 @@ td {
     }
 }
 
-@media all and (max-width:360px) {
+@media all and (max-width: 360px) {
     #titreFilm {
         font-size: 24px;
     }
