@@ -137,8 +137,7 @@ function fetchMovie(page) {
         let failcontent = document.createElement("div");
 
         failImage.src = "https://c.tenor.com/b9k82qg9_NAAAAAd/sonic-dance.gif";
-        fail.innerText =
-          "domage petit apprend tes nom de film et on verra plus tard";
+        fail.innerText = "La recherche n'es pas bonne ou n'existe pas";
 
         fail.classList.add("textFail");
         failcontent.style.gridColumn = 3;
